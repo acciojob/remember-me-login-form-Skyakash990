@@ -1,6 +1,5 @@
 document.getElementById("submit").addEventListener("click",(e)=>{
 	e.preventDefault();
-
 	let username=document.getElementById("username").value;
 	let password=document.getElementById("password").value;
 	let remember=document.getElementById("checkbox").checked;
@@ -9,12 +8,12 @@ document.getElementById("submit").addEventListener("click",(e)=>{
 	if(remember){
 		localStorage.setItem("username",username);
 		localStorage.setItem("password",password);
-		let existing=document.getElementById("existing");
-		existing.removeAttribute("hidden");
 	}else{
 		localStorage.removeItem("username");
 		localStorage.removeItem("password");
 	}
+	let existing=document.getElementById("existing");
+	existing.removeAttribute("hidden");
 
 })
 
