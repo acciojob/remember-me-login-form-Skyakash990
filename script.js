@@ -16,12 +16,11 @@ document.getElementById("submit").addEventListener("click",(e)=>{
 		localStorage.removeItem("password");
 	}
 
-	
-	
 })
 
 	let existing=document.getElementById("existing");
-	existing.addEventListener("click",()=>{
+	existing.addEventListener("click",(e)=>{
+		e.preventDefault();
 		let uname=localStorage.getItem("username");
 		alert(`Logged in as ${uname}`);
 	})
