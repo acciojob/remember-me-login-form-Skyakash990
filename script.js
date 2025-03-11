@@ -9,13 +9,18 @@ document.getElementById("submit").addEventListener("click",(e)=>{
 	if(remember){
 		localStorage.setItem("username",username);
 		localStorage.setItem("password",password);
+		let existing=document.getElementById("existing");
+		existing.removeAttribute("hidden");
+	}else{
+		localStorage.removeItem("username");
+		localStorage.removeItem("password");
 	}
-	localstorage.removeItem("username");
-	localstorage.removeItem("password");
+
 	
 	
 })
-let existing=document.getElementById("existing");
+
+	let existing=document.getElementById("existing");
 	existing.addEventListener("click",()=>{
 		let uname=localStorage.getItem("username");
 		alert(`Logged in as ${uname}`);
